@@ -22,7 +22,7 @@ app.use(userRouter);
 
 // Connections
 mongoose
-  .connect(DB)
+  .connect(DB,{ connectTimeoutMS: 30000 })
   .then(() => {
     console.log("Connection Successful");
   })
